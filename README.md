@@ -8,6 +8,12 @@ Webpack install and production mode
 
 Webpack configuration file: *./webpack.config.js*
 
-First configurations, configuration load: `npx webpack --mode production --config webpack.config.js`
+First configuration, configuration load
 
 Webpack script addition: *webpack-build*
+
+## [ADD] New dependency - Babel
+
+Babel install (babel-loader, babel/core, babel/preset-env, babel/plugin-transform-runtime)
+
+Babel configuration and testing
