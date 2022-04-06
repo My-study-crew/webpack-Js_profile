@@ -1,6 +1,9 @@
 //* Adquiring our path
 const path = require("path");
 
+//* Adquiring our HTML plugin for Webpack
+const htmlWebpackPlugin = require("html-webpack-plugin");
+
 //* Indicating main configurations
 module.exports = {
     entry: "./src/index.js",
@@ -22,4 +25,11 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new htmlWebpackPlugin({
+            inject: true,
+            template: "./public/index.html",
+            filename: "./index.html",
+        }),
+    ],
 };
