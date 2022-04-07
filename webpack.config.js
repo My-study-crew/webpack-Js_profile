@@ -7,6 +7,9 @@ const htmlWebpackPlugin = require("html-webpack-plugin");
 //* Adquiring our CSS plugin for Webpack
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
+//* Adquiring our Copy plugin for Webpack
+const copyWebpackPlugin = require("copy-webpack-plugin");
+
 //* Indicating main configurations
 module.exports = {
     entry: "./src/index.js",
@@ -43,5 +46,13 @@ module.exports = {
             filename: "./index.html",
         }),
         new miniCssExtractPlugin(),
+        new copyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, "src", "assets/images"),
+                    to: "assets/images",
+                },
+            ],
+        }),
     ],
 };

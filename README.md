@@ -41,3 +41,11 @@ CSS configuration for webpack
 New plugin install for preprocess
 
 New file creation for testing
+
+## [ADD] New plugin - Copy Webpack
+
+New plugin install for copying
+
+Copy configuration for webpack
+
+Js template file modification
