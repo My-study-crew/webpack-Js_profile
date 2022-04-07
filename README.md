@@ -49,3 +49,9 @@ New plugin install for copying
 Copy configuration for webpack
 
 Js template file modification
+
+## [MOD] Webpack Asset configuration
+
+Asset configuration add
+
+Js template file modification
