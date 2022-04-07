@@ -4,6 +4,9 @@ const path = require("path");
 //* Adquiring our HTML plugin for Webpack
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
+//* Adquiring our CSS plugin for Webpack
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
+
 //* Indicating main configurations
 module.exports = {
     entry: "./src/index.js",
@@ -23,6 +26,14 @@ module.exports = {
                     loader: "babel-loader",
                 },
             },
+            {
+                test: /\.css|.styl$/i,
+                use: [
+                    miniCssExtractPlugin.loader,
+                    "css-loader",
+                    "stylus-loader",
+                ],
+            },
         ],
     },
     plugins: [
@@ -31,5 +42,6 @@ module.exports = {
             template: "./public/index.html",
             filename: "./index.html",
         }),
+        new miniCssExtractPlugin(),
     ],
 };

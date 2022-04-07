@@ -27,3 +27,17 @@ HTML configuration for Webpack
 HTML file modification
 
 Webpack script addition: *webpack-dev*
+
+## [ADD] New plugins - CSS Webpack, preprocess
+
+New plugin install for HTML on Webpack
+
+HTML file modification
+
+JS file modification
+
+CSS configuration for webpack
+
+New plugin install for preprocess
+
+New file creation for testing
