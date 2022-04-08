@@ -71,3 +71,9 @@ Url configuration add
 Dependency install
 
 Webpack configuration modification
+
+## [MOD] Webpack alias
+
+New alias addition
+
+Webpack configuration modification
