@@ -55,3 +55,13 @@ Js template file modification
 Asset configuration add
 
 Js template file modification
+
+## [MOD] Fonts loaders, url loader
+
+Fonts folder: *src/assets/fonts*
+
+Main CSS file modification
+
+New plugin install
+
+Url configuration add
