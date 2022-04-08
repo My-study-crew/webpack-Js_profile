@@ -65,3 +65,9 @@ Main CSS file modification
 New plugin install
 
 Url configuration add
+
+## [MOD] Files optimization
+
+Dependency install
+
+Webpack configuration modification

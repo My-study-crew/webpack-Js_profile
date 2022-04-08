@@ -10,12 +10,18 @@ const miniCssExtractPlugin = require("mini-css-extract-plugin");
 //* Adquiring our Copy plugin for Webpack
 const copyWebpackPlugin = require("copy-webpack-plugin");
 
+//* Adquiring our Minimizer plugin for Webpack
+const cssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
+//* Adquiring our Terser plugin for Webpack
+const terserWebpackPlugin = require("terser-webpack-plugin");
+
 //* Indicating main configurations
 module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "main.js",
+        filename: "[name].[contenthash].js",
         assetModuleFilename: "assets/images/[hash][ext][query]",
     },
     resolve: {
@@ -42,20 +48,20 @@ module.exports = {
                 test: /\.png/,
                 type: "asset/resource",
             },
-            // {
-            //     test: /\.(woff|woff2)$/,
-            //     use: {
-            //         loader: "url-loader",
-            //         options: {
-            //             limit: 10000,
-            //             mimetype: "application/font-woff",
-            //             name: "[name].[ext]",
-            //             outputPath: "./assets/fonts/",
-            //             publicPath: "./assets/fonts/",
-            //             esModule: false,
-            //         },
-            //     },
-            // },
+            {
+                test: /\.(woff|woff2)$/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        limit: 10000,
+                        mimetype: "application/font-woff",
+                        name: "[name].[contenthash].[ext]",
+                        outputPath: "./assets/fonts/",
+                        publicPath: "./assets/fonts/",
+                        esModule: false,
+                    },
+                },
+            },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: "asset/resource",
@@ -71,7 +77,9 @@ module.exports = {
             template: "./public/index.html",
             filename: "./index.html",
         }),
-        new miniCssExtractPlugin(),
+        new miniCssExtractPlugin({
+            filename: "assets/[name].[contenthash].css",
+        }),
         new copyWebpackPlugin({
             patterns: [
                 {
@@ -81,4 +89,8 @@ module.exports = {
             ],
         }),
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [new cssMinimizerPlugin(), new terserWebpackPlugin()],
+    },
 };
