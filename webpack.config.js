@@ -16,6 +16,9 @@ const cssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 //* Adquiring our Terser plugin for Webpack
 const terserWebpackPlugin = require("terser-webpack-plugin");
 
+//* Adquiring our Dotenv for Webpack
+const dotEnvWebpack = require("dotenv-webpack");
+
 //* Indicating main configurations
 module.exports = {
     entry: "./src/index.js",
@@ -94,6 +97,7 @@ module.exports = {
                 },
             ],
         }),
+        new dotEnvWebpack(),
     ],
     optimization: {
         minimize: true,

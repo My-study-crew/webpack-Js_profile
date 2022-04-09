@@ -77,3 +77,17 @@ Webpack configuration modification
 New alias addition
 
 Webpack configuration modification
+
+## [MOD] Environment variables
+
+Dependency install
+
+New file creation: *.env*
+
+New file creation: *.env-example*
+
+Environment variables file modification
+
+Webpack configuration modification
+
+getData file modification
