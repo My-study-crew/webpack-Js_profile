@@ -99,3 +99,13 @@ New webpack development mode file creation
 Webpack development mode modification
 
 Package modification
+
+## [MOD] Production mode
+
+Webpack production mode modification
+
+Webpack plugin install
+
+Webpack config modification
+
+Package modification

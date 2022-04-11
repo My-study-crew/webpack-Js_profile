@@ -2,36 +2,26 @@
 const path = require("path");
 
 //* Adquiring our HTML plugin for Webpack
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const htmlWebpackPlugin = require("html-webpack-plugin");
 
 //* Adquiring our CSS plugin for Webpack
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
 //* Adquiring our Copy plugin for Webpack
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-
-//* Adquiring our Minimizer plugin for Webpack
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-
-//* Adquiring our Terser plugin for Webpack
-const TerserWebpackPlugin = require("terser-webpack-plugin");
+const copyWebpackPlugin = require("copy-webpack-plugin");
 
 //* Adquiring our Dotenv for Webpack
-const DotEnvWebpack = require("dotenv-webpack");
-
-//* Adquiring our Clean plugin for Webpack  - Old code
-// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const dotEnvWebpack = require("dotenv-webpack");
 
 //* Indicating main configurations
 module.exports = {
     entry: "./src/index.js",
     output: {
-        clean: true, // New cleaning addition by webpack
         path: path.resolve(__dirname, "dist"),
         filename: "[name].[contenthash].js",
         assetModuleFilename: "assets/images/[hash][ext][query]",
     },
-    mode: "production",
+    mode: "development",
     resolve: {
         extensions: [".js"],
         alias: {
@@ -53,7 +43,7 @@ module.exports = {
             {
                 test: /\.css|.styl$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    miniCssExtractPlugin.loader,
                     "css-loader",
                     "stylus-loader",
                 ],
@@ -86,15 +76,15 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({
+        new htmlWebpackPlugin({
             inject: true,
             template: "./public/index.html",
             filename: "./index.html",
         }),
-        new MiniCssExtractPlugin({
+        new miniCssExtractPlugin({
             filename: "assets/[name].[contenthash].css",
         }),
-        new CopyWebpackPlugin({
+        new copyWebpackPlugin({
             patterns: [
                 {
                     from: path.resolve(__dirname, "src", "assets/images"),
@@ -102,11 +92,6 @@ module.exports = {
                 },
             ],
         }),
-        new DotEnvWebpack(),
-        // new CleanWebpackPlugin(), Old code we used to use
+        new dotEnvWebpack(),
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [new CssMinimizerPlugin(), new TerserWebpackPlugin()],
-    },
 };
