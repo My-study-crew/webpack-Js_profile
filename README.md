@@ -91,3 +91,11 @@ Environment variables file modification
 Webpack configuration modification
 
 getData file modification
+
+## [MOD] Development mode
+
+New webpack development mode file creation
+
+Webpack development mode modification
+
+Package modification
