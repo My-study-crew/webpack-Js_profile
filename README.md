@@ -125,3 +125,5 @@ New Netlify file creation
 Netlify file modification
 
 Gitmojis and Gitmoji-cli add
+
+Environment variables fix
