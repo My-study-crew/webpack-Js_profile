@@ -117,3 +117,11 @@ Webpack development mode modification
 Package modification
 
 Scripts addition - Watcher mode
+
+## [ADD-MOD] Netlify deploy
+
+New Netlify file creation
+
+Netlify file modification
+
+Gitmojis and Gitmoji-cli add
