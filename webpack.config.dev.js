@@ -22,6 +22,7 @@ module.exports = {
         assetModuleFilename: "assets/images/[hash][ext][query]",
     },
     mode: "development",
+    // watch: true, // Watcher mode activated
     resolve: {
         extensions: [".js"],
         alias: {

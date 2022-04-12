@@ -109,3 +109,11 @@ Webpack plugin install
 Webpack config modification
 
 Package modification
+
+## [MOD] Watcher mode
+
+Webpack development mode modification
+
+Package modification
+
+Scripts addition - Watcher mode
