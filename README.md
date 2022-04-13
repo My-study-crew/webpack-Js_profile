@@ -127,3 +127,11 @@ Netlify file modification
 Gitmojis and Gitmoji-cli add
 
 Environment variables fix
+
+## [ADD] Webpack Dev Server
+
+New Dependency install
+
+Webpack development file modification
+
+Package file modification

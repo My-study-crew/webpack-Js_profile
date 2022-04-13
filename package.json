@@ -8,7 +8,8 @@
         "webpack-build": "node ./scripts/create-env.js && webpack --mode production --config webpack.config.js",
         "webpack-build-watcher": "webpack --watch --mode production --config webpack.config.js",
         "webpack-dev": "webpack --config webpack.config.dev.js",
-        "webpack-dev-watcher": "webpack --watch --config webpack.config.dev.js"
+        "webpack-dev-watcher": "webpack --watch --config webpack.config.dev.js",
+        "start": "webpack serve --config webpack.config.dev.js"
     },
     "repository": {
         "type": "git",
@@ -43,7 +44,8 @@
         "terser-webpack-plugin": "^5.3.1",
         "url-loader": "^4.1.1",
         "webpack": "^5.71.0",
-        "webpack-cli": "^4.9.2"
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.8.1"
     },
     "dependencies": {
         "gitmojis": "^3.8.0"

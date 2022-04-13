@@ -95,4 +95,15 @@ module.exports = {
         }),
         new dotEnvWebpack(),
     ],
+    devServer: {
+        // contentBase: path.join(__dirname, "dist"), old code
+        static: {
+            directory: path.join(__dirname, "dist"),
+            watch: true,
+        },
+        watchFiles: path.join(__dirname, "./**"),
+        compress: true,
+        historyApiFallback: true,
+        port: 3005,
+    },
 };
