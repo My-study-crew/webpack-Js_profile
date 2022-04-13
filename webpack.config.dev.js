@@ -2,16 +2,19 @@
 const path = require("path");
 
 //* Adquiring our HTML plugin for Webpack
-const htmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 //* Adquiring our CSS plugin for Webpack
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 //* Adquiring our Copy plugin for Webpack
-const copyWebpackPlugin = require("copy-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 //* Adquiring our Dotenv for Webpack
-const dotEnvWebpack = require("dotenv-webpack");
+const DotEnvWebpack = require("dotenv-webpack");
+
+//* Adquiring our Bundle Analyzer for Webpack
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer");
 
 //* Indicating main configurations
 module.exports = {
@@ -44,7 +47,7 @@ module.exports = {
             {
                 test: /\.css|.styl$/i,
                 use: [
-                    miniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "stylus-loader",
                 ],
@@ -77,15 +80,15 @@ module.exports = {
         ],
     },
     plugins: [
-        new htmlWebpackPlugin({
+        new HtmlWebpackPlugin({
             inject: true,
             template: "./public/index.html",
             filename: "./index.html",
         }),
-        new miniCssExtractPlugin({
+        new MiniCssExtractPlugin({
             filename: "assets/[name].[contenthash].css",
         }),
-        new copyWebpackPlugin({
+        new CopyWebpackPlugin({
             patterns: [
                 {
                     from: path.resolve(__dirname, "src", "assets/images"),
@@ -93,7 +96,8 @@ module.exports = {
                 },
             ],
         }),
-        new dotEnvWebpack(),
+        new DotEnvWebpack(),
+        new BundleAnalyzerPlugin(),
     ],
     devServer: {
         // contentBase: path.join(__dirname, "dist"), old code

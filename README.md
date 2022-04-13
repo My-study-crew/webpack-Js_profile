@@ -135,3 +135,13 @@ New Dependency install
 Webpack development file modification
 
 Package file modification
+
+## [ADD] Webpack dependency
+
+New dependency install
+
+Webpack development config modification
+
+Npx configuration
+
+Webpack bundle initialization
