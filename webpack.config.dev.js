@@ -14,7 +14,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const DotEnvWebpack = require("dotenv-webpack");
 
 //* Adquiring our Bundle Analyzer for Webpack
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 //* Indicating main configurations
 module.exports = {
@@ -25,6 +25,7 @@ module.exports = {
         assetModuleFilename: "assets/images/[hash][ext][query]",
     },
     mode: "development",
+    devtool: "source-map", // Devtools activation
     // watch: true, // Watcher mode activated
     resolve: {
         extensions: [".js"],

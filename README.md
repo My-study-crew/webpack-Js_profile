@@ -145,3 +145,7 @@ Webpack development config modification
 Npx configuration
 
 Webpack bundle initialization
+
+## [MOD] Webpack DevTools
+
+Webpack developer config modification
